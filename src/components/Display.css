@@ -1,30 +1,28 @@
-/* Container for Notes */
+
 .notes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
   gap: 20px;
   margin-top: 20px;
 }
 
-/* Individual Note Card Styling */
 .note {
-  background-color: #ffffff; /* White background for notes */
+  background-color: #ffffff; 
   border: 1px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
   padding: 15px;
   font-family: Arial, sans-serif;
   text-align: left;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Hover Effect */
+
 .note:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
+  transform: scale(1.05); 
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Note Header with Title and Edit Icon */
 .note-header {
   display: flex;
   justify-content: space-between;
@@ -39,29 +37,27 @@
   cursor: pointer;
 }
 
-/* Edit Icon Styling */
 .edit-icon {
   cursor: pointer;
   margin-left: 10px;
-  color: #007bff; /* Blue color for the icon */
-  font-size: 1.2rem; /* Adjust size */
+  color: #007bff; 
+  font-size: 1.2rem; 
   transition: color 0.2s ease-in-out;
 }
 
 .edit-icon:hover {
-  color: #0056b3; /* Darker blue on hover */
+  color: #0056b3; 
 }
 
-/* Note Content */
 .note p {
   font-size: 14px;
   color: #555;
   margin-bottom: 8px;
 }
 
-/* Pin Button */
+
 .pin-btn {
-  background-color: #28a745; /* Green button for Pin */
+  background-color: #28a745; 
   color: white;
   border: none;
   padding: 8px 12px;
@@ -72,14 +68,13 @@
 }
 
 .pin-btn:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #218838; 
 }
 
-/* Cancel and Save Buttons */
 .cancel-btn,
 .save-btn {
   margin-right: 10px;
-  background-color: #dc3545; /* Red button for Cancel */
+  background-color: #dc3545; 
   color: white;
   border: none;
   padding: 8px 12px;
@@ -90,13 +85,13 @@
 }
 
 .cancel-btn:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333; 
 }
 
 .save-btn {
-  background-color: #007bff; /* Blue button for Save */
+  background-color: #007bff; 
 }
 
 .save-btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3; 
 }
