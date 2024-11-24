@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify'; // Ensure correct import
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Card.css';
 import Display from './Display';
 import Pagination from '../pagination/Pagination';
-import { ToastContainer } from 'react-toastify'; // Correct import for ToastContainer
+import { ToastContainer } from 'react-toastify'; 
 
 export default function Card() {
   const [Data, setData] = useState([]);
@@ -13,11 +13,11 @@ export default function Card() {
   const [Body, setBody] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
-  const itemsPerPage = 6; // Items to display per page
+  const itemsPerPage = 6; 
 
   const totalPages = Math.ceil(Data.length / itemsPerPage);
 
-  // Sort pinned notes first
+  
   const sortedData = [...Data].sort((a, b) => b.pinned - a.pinned);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -27,8 +27,8 @@ export default function Card() {
   const handleSubmit = () => {
     if (Body.length < 10) {
       toast.error('Body must be at least 10 characters long!', {
-        position: 'top-center', // Correct usage of the position
-        autoClose: 3000, // Auto-close after 3 seconds
+        position: 'top-center', 
+        autoClose: 3000,
       });
       return;
     }
@@ -44,7 +44,7 @@ export default function Card() {
   };
 
   const togglePin = (index) => {
-    const updatedNote = paginatedData[index]; // Find the note in the paginated data
+    const updatedNote = paginatedData[index]; 
     const globalIndex = Data.findIndex((item) => item.timeStamp === updatedNote.timeStamp);
   
     if (globalIndex !== -1) {

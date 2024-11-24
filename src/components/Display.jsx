@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
 import './Display.css';
-import { FaEdit } from 'react-icons/fa'; // Import the edit icon from Font Awesome
+import { FaEdit } from 'react-icons/fa'; 
 
 export default function Display({ Data, togglePin, handleEdit }) {
-  const [editingIndex, setEditingIndex] = useState(null); // Tracks which note is being edited
-  const [editedNote, setEditedNote] = useState({}); // Tracks the edited note details
-
+  const [editingIndex, setEditingIndex] = useState(null); 
+  const [editedNote, setEditedNote] = useState({}); 
   const handleEditClick = (index, note) => {
-    setEditingIndex(index); // Set the current editing index
-    setEditedNote({ ...note }); // Preload the note details into the edit fields
+    setEditingIndex(index);
+    setEditedNote({ ...note }); 
   };
 
   const handleSave = () => {
     if (editingIndex !== null) {
-      handleEdit(editingIndex, editedNote); // Save changes through parent function
-      setEditingIndex(null); // Exit edit mode
-      setEditedNote({}); // Clear the edited note state
+      handleEdit(editingIndex, editedNote); 
+      setEditingIndex(null); 
+      setEditedNote({}); 
     }
   };
 
   const handleCancel = () => {
-    setEditingIndex(null); // Exit edit mode
-    setEditedNote({}); // Clear the edited note state
+    setEditingIndex(null); 
+    setEditedNote({}); 
   };
 
   return (
@@ -29,7 +28,7 @@ export default function Display({ Data, togglePin, handleEdit }) {
       {Data.map((item, index) =>
         editingIndex === index ? (
           <div className="note" key={index}>
-            {/* Edit Mode */}
+
             <input
               type="text"
               value={editedNote.Title || ''}
@@ -60,7 +59,7 @@ export default function Display({ Data, togglePin, handleEdit }) {
           </div>
         ) : (
           <div className="note" key={index}>
-            {/* View Mode */}
+            
             <div className="note-header">
               <h4>{item.Title}</h4>
               <FaEdit
